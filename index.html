@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:sans-serif;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            background-image:url(bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        nav{
+            height: 60px;
+            width: 100%;
+            background-color: #143e52;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            padding: 0px 50px 0px 100px;
+        }
+        nav .logo{
+            color: white;
+            font-size: 33px;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        nav ul li{
+            margin: 0px 10px;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 5px 8px;
+            border-radius: 5px;
+            transition: 0.5s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a.active{
+            background-color: white;
+            color: black;
+        }
+        .icon{
+            height: 48px;
+            display: none;
+        }
+
+        @media(max-width:700px){
+            ul{
+            width: 50%;
+            height: auto;
+            display: none;
+            position: absolute;
+            top:48px;
+            right: 0%;
+            text-align: center;
+            background-color: #1b1b1b;
+            transition: 0.5s ease-in all;
+        }
+        .icon{
+            display: block;
+            cursor: pointer;
+        }
+        nav{
+            width: 100%;
+            height: auto;
+        }
+        nav ul li{
+            margin: 50px 0px;
+        }
+        nav ul li a:hover,
+        nav ul li a.active{
+            background:none;
+            color: cyan;
+        }
+        nav{
+            padding: 0px 20px 0px 20px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Brand</div>
+        <ul id="menu">
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <a href="#" class="icon" onclick="txt()"><img src="mobile-menu.png"></a>
+    </nav>
+    <script>
+        function txt(){
+            var x =document.getElementById("menu");
+            if(x.style.display=="block")
+            {
+                x.style.display="none";
+            }
+            else{
+                x.style.display="block";
+            }
+        }
+    </script>
+</body>
+</html>
